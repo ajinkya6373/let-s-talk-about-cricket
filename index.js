@@ -5,14 +5,20 @@ const greeting =()=>{
 console.log("Lets play a game ");
 console.log("**************************************");
 user = readlineSync.question("What is your name ? ");
-console.log("");
+console.log("-");
 }
+
 
 const HighScorers =[
 
   {
     name:"ajinkya",
     score:5
+    
+  },
+  {
+    name:"shekhar",
+    score:4
     
   }
   
@@ -62,9 +68,14 @@ const play =()=>{
 }
 
 
-greeting()
-play()
+const showScores=()=>{
 console.log("**************************************");
 console.log(user + " your score is " + score);
 console.log("**************************************");
-console.log("Highest Scorer is ", HighScorers[0].name)
+HighScorers.map((score)=> console.log(score.name,":",score.score))
+
+}
+
+greeting()
+play()
+showScores()
